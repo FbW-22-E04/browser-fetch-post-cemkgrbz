@@ -23,16 +23,16 @@ async function handleClick(e) {
         email: email.value,
         password: password.value,
         message: message.value,
-        checkbox: checkbox.value
+        checkbox: checkbox.checked
     };
 
-    const settings = {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8'
-        }
-    };
+    // const settings = {
+    //     method: 'POST',
+    //     body: JSON.stringify(data),
+    //     headers: {
+    //         'Content-type': 'application/json; charset=UTF-8'
+    //     }
+    // };
 
     // try {
     
@@ -51,7 +51,7 @@ async function handleClick(e) {
 
         const response = await axios.post('https://jsonplaceholder.typicode.com/posts', data);
 
-        if (response.status === 201) alert('Thanks your profile has been saved');
+        if (response.status === 201) alert('Your profile has been saved');
         console.log("response", response);
 
     } catch (error) {
